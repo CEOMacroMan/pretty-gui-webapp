@@ -80,3 +80,47 @@ themeToggle.addEventListener('click', () => {
   const newTheme = body.classList.contains('dark') ? 'light' : 'dark';
   setTheme(newTheme);
 });
+
+// Calculator functionality
+const openCalcBtn = document.getElementById('open-calculator');
+const calculatorSection = document.getElementById('calculator');
+const calcInput = document.getElementById('calc-expression');
+const calcEvaluate = document.getElementById('calc-evaluate');
+const calcClose = document.getElementById('calc-close');
+const calcResult = document.getElementById('calc-result');
+
+openCalcBtn.addEventListener('click', () => {
+  calculatorSection.classList.remove('hidden');
+});
+
+calcClose.addEventListener('click', () => {
+  calculatorSection.classList.add('hidden');
+  calcInput.value = '';
+  calcResult.textContent = '';
+});
+
+calcEvaluate.addEventListener('click', () => {
+  try {
+    const result = Function(`"use strict";return(${calcInput.value})`)();
+    calcResult.textContent = result;
+  } catch (err) {
+    calcResult.textContent = 'Error';
+  }
+});
+
+// Latin phrases
+const latinBtn = document.getElementById('latin-button');
+const latinSection = document.getElementById('latin-section');
+const latinOutput = document.getElementById('latin-output');
+const latinPhrases = [
+  'Lorem ipsum dolor sit amet',
+  'Carpe diem',
+  'Veni, vidi, vici',
+  'Alea iacta est'
+];
+
+latinBtn.addEventListener('click', () => {
+  const phrase = latinPhrases[Math.floor(Math.random() * latinPhrases.length)];
+  latinSection.classList.remove('hidden');
+  latinOutput.textContent = phrase;
+});
