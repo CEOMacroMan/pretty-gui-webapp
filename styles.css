@@ -39,6 +39,8 @@ body {
   justify-content: space-between;
   padding: 0 1rem;
   z-index: 1000;
+  background: #FF5F00;
+  color: #fff;
 }
 
 .navbar button {
@@ -46,7 +48,7 @@ body {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: var(--text);
+  color: #fff;
 }
 
 .container {
@@ -71,6 +73,18 @@ body {
   padding: 0.5rem 0;
   color: var(--text);
   text-decoration: none;
+}
+
+.sidebar button {
+  display: block;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font: inherit;
 }
 
 .content {
@@ -138,6 +152,39 @@ body {
   cursor: pointer;
   color: var(--text);
   font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#calculator input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text);
+}
+
+#calculator .calc-controls {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#calculator .calc-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: var(--glass-bg);
+  color: var(--text);
+}
+
+#calc-result {
+  margin-top: 0.5rem;
+  min-height: 1.5rem;
 }
 
 #notes-area {

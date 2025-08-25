@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar glass">
+  <nav class="navbar">
     <div class="nav-left">Pretty GUI</div>
     <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
   </nav>
@@ -16,6 +16,8 @@
       <ul>
         <li><a href="#tasks">Tasks</a></li>
         <li><a href="#notes">Notes</a></li>
+        <li><button id="open-calculator">Calculadora</button></li>
+        <li><button id="latin-button">Latín</button></li>
       </ul>
     </aside>
     <main class="content">
@@ -30,6 +32,19 @@
       <section id="notes" class="widget glass">
         <h2>Notes</h2>
         <textarea id="notes-area" placeholder="Write your notes here..."></textarea>
+      </section>
+      <section id="calculator" class="widget glass hidden">
+        <h2>Calculadora</h2>
+        <input type="text" id="calc-expression" placeholder="e.g., 2+2 or Math.sin(Math.PI/2)">
+        <div class="calc-controls">
+          <button id="calc-evaluate">Calcular</button>
+          <button id="calc-close">Cerrar</button>
+        </div>
+        <div id="calc-result"></div>
+      </section>
+      <section id="latin-section" class="widget glass hidden">
+        <h2>Latín</h2>
+        <p id="latin-output"></p>
       </section>
     </main>
   </div>
