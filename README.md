@@ -1,15 +1,15 @@
 # Pretty GUI Webapp
+Single-page demo with a glassmorphism UI featuring a scientific calculator, Latin text generator and light/dark theme.
 
-A simple single-page app with a glassmorphism UI, task manager, notes widget, and theme toggle.
+## Features
+- Top bar in corporate Applus orange.
+- Responsive sidebar with calculator drawer and Latin panel.
+- Scientific calculator with DEG/RAD modes, history and on-screen keyboard.
+- Latin text generator with quotes or classic Lorem Ipsum.
+- Light/dark theme with preference stored in localStorage.
 
-## Run locally
-Open `index.html` directly in a browser or serve the folder with a static server:
+## How to run
+Open `index.html` directly in your browser or serve the folder with a static server such as `npx serve`. Deploying to GitHub Pages also works: push to GitHub and enable Pages with the `main` branch.
 
-```bash
-npx serve
-```
-
-## Deploy to GitHub Pages
-1. Push the contents of this repository to GitHub.
-2. In the repository settings, enable **GitHub Pages** with source set to the `main` branch.
-3. Visit `https://<username>.github.io/<repository>` after the build completes.
+## Customization
+Edit the CSS variable `--applus-orange` in `styles.css` to change the corporate color across the app.

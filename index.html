@@ -7,46 +7,45 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">Pretty GUI</div>
-    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-  </nav>
-  <div class="container">
-    <aside class="sidebar glass">
-      <ul>
-        <li><a href="#tasks">Tasks</a></li>
-        <li><a href="#notes">Notes</a></li>
-        <li><button id="open-calculator">Calculadora</button></li>
-        <li><button id="latin-button">Latín</button></li>
-      </ul>
-    </aside>
-    <main class="content">
-      <section id="tasks" class="widget glass">
-        <h2>Tasks</h2>
-        <div class="task-input">
-          <input type="text" id="new-task" placeholder="Add a task">
-          <button id="add-task">Add</button>
+  <header class="topbar">
+    <button id="sidebar-toggle" class="icon-button" aria-label="Toggle sidebar">☰</button>
+    <h1 class="brand">Pretty GUI</h1>
+    <div class="spacer"></div>
+    <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">🌙</button>
+  </header>
+  <div class="layout">
+    <nav id="sidebar" class="sidebar" aria-label="Primary">
+      <button id="btn-calculator" class="sidebar-btn" aria-controls="calculator-modal">Calculator</button>
+      <button id="btn-latin" class="sidebar-btn" aria-controls="latin-panel">Latin</button>
+    </nav>
+    <main id="main">
+      <section id="latin-panel" class="panel" aria-labelledby="btn-latin">
+        <div class="latin-controls">
+          <button id="latin-sentence">Generate sentence</button>
+          <button id="latin-paragraph">Generate paragraph</button>
+          <label class="toggle"><input type="checkbox" id="latin-mode"> Quotes mode</label>
+          <label class="toggle"><input type="checkbox" id="latin-translation"> Show translation (ES)</label>
+          <button id="latin-copy">Copy</button>
         </div>
-        <ul id="task-list"></ul>
-      </section>
-      <section id="notes" class="widget glass">
-        <h2>Notes</h2>
-        <textarea id="notes-area" placeholder="Write your notes here..."></textarea>
-      </section>
-      <section id="calculator" class="widget glass hidden">
-        <h2>Calculadora</h2>
-        <input type="text" id="calc-expression" placeholder="e.g., 2+2 or Math.sin(Math.PI/2)">
-        <div class="calc-controls">
-          <button id="calc-evaluate">Calcular</button>
-          <button id="calc-close">Cerrar</button>
-        </div>
-        <div id="calc-result"></div>
-      </section>
-      <section id="latin-section" class="widget glass hidden">
-        <h2>Latín</h2>
-        <p id="latin-output"></p>
+        <div id="latin-output"></div>
       </section>
     </main>
+  </div>
+  <div id="calculator-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="calc-heading">
+    <div class="modal-body glass">
+      <div class="modal-header">
+        <h2 id="calc-heading">Calculator</h2>
+        <button id="calc-close" class="icon-button" aria-label="Close">✕</button>
+      </div>
+      <div id="calc-screen" class="calc-screen" tabindex="0" aria-label="Calculator display"></div>
+      <div class="calc-controls">
+        <button id="angle-toggle" aria-pressed="false">DEG</button>
+        <button id="calc-clear">C</button>
+        <button id="calc-back">←</button>
+      </div>
+      <div id="calc-keys" class="calc-keys"></div>
+      <ul id="calc-history" class="calc-history" aria-label="History"></ul>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
