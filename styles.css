@@ -1,0 +1,165 @@
+:root {
+  --bg: #e0e0e0;
+  --text: #1a1a1a;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+body.dark {
+  --bg: #1a1a1a;
+  --text: #e0e0e0;
+  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1000;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.container {
+  display: flex;
+  margin-top: 70px;
+  min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+  width: 200px;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.widget {
+  flex: 1 1 300px;
+  min-width: 250px;
+  padding: 1rem;
+}
+
+.task-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text);
+}
+
+.task-input button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: var(--glass-bg);
+  color: var(--text);
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: var(--glass-bg);
+}
+
+#task-list li.done span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+#task-list button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+#notes-area {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid var(--glass-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: transparent;
+  color: var(--text);
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: auto;
+  }
+  .sidebar ul {
+    display: flex;
+    gap: 1rem;
+  }
+}

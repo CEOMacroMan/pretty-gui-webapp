@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pretty GUI Webapp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar glass">
+    <div class="nav-left">Pretty GUI</div>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </nav>
+  <div class="container">
+    <aside class="sidebar glass">
+      <ul>
+        <li><a href="#tasks">Tasks</a></li>
+        <li><a href="#notes">Notes</a></li>
+      </ul>
+    </aside>
+    <main class="content">
+      <section id="tasks" class="widget glass">
+        <h2>Tasks</h2>
+        <div class="task-input">
+          <input type="text" id="new-task" placeholder="Add a task">
+          <button id="add-task">Add</button>
+        </div>
+        <ul id="task-list"></ul>
+      </section>
+      <section id="notes" class="widget glass">
+        <h2>Notes</h2>
+        <textarea id="notes-area" placeholder="Write your notes here..."></textarea>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
